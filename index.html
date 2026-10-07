@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Elevate Coffee Academy</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #3b2416;
+            background: #f8f4ef;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #6b3e26;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #3b2416;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #6b3e26;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 75vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 50px 20px;
+            background: #efe3d5;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            color: #6b3e26;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            font-size: 19px;
+            line-height: 1.7;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 13px 25px;
+            background: #6b3e26;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        /* GENERAL SECTIONS */
+        section {
+            padding: 70px 20px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 36px;
+            color: #6b3e26;
+        }
+
+        /* ABOUT */
+        .about-content {
+            max-width: 750px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        /* COURSES */
+        #courses {
+            text-align: center;
+        }
+
+        .courses-intro {
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        .courses-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .course-card {
+            width: 270px;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            text-align: left;
+        }
+
+        .course-card h3 {
+            color: #6b3e26;
+            text-align: center;
+            font-size: 22px;
+        }
+
+        .course-card ul {
+            padding-left: 20px;
+            line-height: 1.8;
+        }
+
+        /* BOOKING */
+        #booking {
+            background: #efe3d5;
+            text-align: center;
+        }
+
+        #booking form {
+            max-width: 550px;
+            margin: 30px auto;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        #booking label {
+            margin: 12px 0 6px;
+            font-weight: bold;
+        }
+
+        #booking input,
+        #booking select,
+        #booking textarea {
+            padding: 13px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: inherit;
+        }
+
+        #booking textarea {
+            min-height: 100px;
+        }
+
+        #booking button {
+            margin-top: 25px;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background: #6b3e26;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* CONTACT */
+        #contact {
+            text-align: center;
+        }
+
+        #contact p {
+            font-size: 18px;
+            margin: 12px;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 25px 20px;
+            background: #222;
+            color: white;
+        }
+
+        footer p {
+            margin: 8px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+
+            header {
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            nav a {
+                font-size: 15px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            h2 {
+                font-size: 30px;
+            }
+
+            .courses-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .course-card {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <div class="logo">
+    <img src="images/logo.png" alt="Elevate Coffee Academy Logo">
+</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#courses">Courses</a>
+            <a href="#booking">Book Training</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- HOME -->
+    <section id="home" class="hero">
+<img src="images/coffee.jpg" alt="Elevate Coffee Academy">
+        <h1>From Beginner to Professional</h1>
+
+        <p>
+            Welcome to Elevate Coffee Academy, where passion meets
+            professionalism. Learn professional barista skills and
+            turn your passion for coffee into a career.
+        </p>
+
+        <a href="#booking" class="button">
+            Start Your Coffee Journey
+        </a>
+
+    </section>
+
+
+    <!-- ABOUT US -->
+<section id="about">
+
+    <div class="about-container">
+
+        <div class="about-image">
+            <img src="images/latte-art.jpg" alt="Barista creating latte art">
+        </div>
+
+        <div class="about-text">
+
+            <h2>About Elevate Coffee Academy</h2>
+
+            <p>
+                Elevate Coffee Academy is a professional coffee training
+                center created to help people turn their passion for coffee
+                into practical skills and real opportunities.
+            </p>
+
+            <p>
+                We believe that anyone can learn the art of coffee with the
+                right training, practice, and guidance. Our training combines
+                practical barista skills with the knowledge needed to work
+                confidently in a professional café environment.
+            </p>
+
+            <p>
+                From espresso preparation and milk steaming to latte art,
+                brewing methods, customer service, and café business skills,
+                we help our students grow from beginners into confident
+                professionals.
+            </p>
+
+            <div class="about-highlight">
+                <strong>Our Mission</strong>
+                <p>
+                    To equip aspiring baristas with practical skills,
+                    confidence, and knowledge to build a successful future
+                    in the coffee industry.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    </section>
+
+
+    <!-- COURSES -->
+    <section id="courses">
+
+        <h2>What We Teach</h2>
+
+        <p class="courses-intro">
+            Practical coffee training designed to take you
+            from beginner to professional.
+        </p>
+
+        <div class="courses-container">
+
+
+            <div class="course-card">
+
+                <h3>☕ Coffee Fundamentals</h3>
+
+                <ul>
+                    <li>Introduction to coffee</li>
+                    <li>Coffee origins and history</li>
+                    <li>Coffee beans and processing</li>
+                    <li>Roasting basics</li>
+                    <li>Coffee tasting and flavor</li>
+                </ul>
+
+            </div>
+
+
+            <div class="course-card">
+
+                <h3>⚙️ Espresso Skills</h3>
+
+                <ul>
+                    <li>Espresso machine operation</li>
+                    <li>Grinding and dosing</li>
+                    <li>Tamping and extraction</li>
+                    <li>Espresso recipes and ratios</li>
+                    <li>Fixing espresso problems</li>
+                </ul>
+
+            </div>
+
+
+            <div class="course-card">
+
+                <h3>🥛 Milk & Latte Art</h3>
+
+                <ul>
+                    <li>Milk steaming</li>
+                    <li>Milk temperature and texture</li>
+                    <li>Latte preparation</li>
+                    <li>Hearts and tulips</li>
+                    <li>Rosetta and advanced latte art</li>
+                </ul>
+
+            </div>
+
+
+            <div class="course-card">
+
+                <h3>💧 Brewing Methods</h3>
+
+                <ul>
+                    <li>V60 pour-over</li>
+                    <li>French press</li>
+                    <li>Brewing ratios</li>
+                    <li>Water and grind size</li>
+                    <li>Pouring techniques</li>
+                </ul>
+
+            </div>
+
+
+            <div class="course-card">
+
+                <h3>🍹 Café Drinks</h3>
+
+                <ul>
+                    <li>Latte</li>
+                    <li>Cappuccino</li>
+                    <li>Flat white</li>
+                    <li>Cortado</li>
+                    <li>Spanish latte</li>
+                    <li>Hot chocolate</li>
+                </ul>
+
+            </div>
+
+
+            <div class="course-card">
+
+                <h3>🍓 Beverage Skills</h3>
+
+                <ul>
+                    <li>Fresh juices</li>
+                    <li>Smoothies</li>
+                    <li>Milkshakes</li>
+                    <li>Mocktails</li>
+                    <li>Fruit preparation</li>
+                </ul>
+
+            </div>
+
+
+            <div class="course-card">
+
+                <h3>👩🏾‍🍳 Professional Barista</h3>
+
+                <ul>
+                    <li>Customer service</li>
+                    <li>Good barista behavior</li>
+                    <li>Cleaning and hygiene</li>
+                    <li>Stock management</li>
+                    <li>Working in a café</li>
+                </ul>
+
+            </div>
+
+
+            <div class="course-card">
+
+                <h3>💼 Coffee Business</h3>
+
+                <ul>
+                    <li>Café business basics</li>
+                    <li>Menu development</li>
+                    <li>Costing and pricing</li>
+                    <li>Sales and profit</li>
+                    <li>Starting a coffee business</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+<!-- PHOTO GALLERY -->
+<section id="gallery">
+
+    <h2>Our Coffee Experience</h2>
+
+    <p class="gallery-intro">
+        Discover the world of coffee, creativity, and professional barista training at Elevate Coffee Academy.
+    </p>
+
+    <div class="gallery-container">
+
+        <div class="gallery-item large">
+            <img src="images/coffee.jpg" alt="Coffee at Elevate Coffee Academy">
+            <div class="gallery-overlay">
+                <h3>Specialty Coffee</h3>
+                <p>Quality coffee, professionally prepared.</p>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/barista.jpg" alt="Barista training">
+            <div class="gallery-overlay">
+                <h3>Barista Training</h3>
+                <p>Learn practical professional skills.</p>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/latte-art.jpg" alt="Latte art">
+            <div class="gallery-overlay">
+                <h3>Latte Art</h3>
+                <p>Turn milk into beautiful art.</p>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/espresso.jpg" alt="Espresso preparation">
+            <div class="gallery-overlay">
+                <h3>Espresso Skills</h3>
+                <p>Master extraction and espresso preparation.</p>
+            </div>
+        </div>
+
+        <div class="gallery-item large">
+            <img src="images/training.jpg" alt="Coffee training">
+            <div class="gallery-overlay">
+                <h3>Learn & Grow</h3>
+                <p>From beginner to professional.</p>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/cafe.jpg" alt="Coffee shop">
+            <div class="gallery-overlay">
+                <h3>Café Experience</h3>
+                <p>Build confidence for the real café world.</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- BOOKING -->
+    <section id="booking">
+
+        <h2>Book Your Training</h2>
+
+        <p>
+            Ready to start your coffee journey?
+            Fill in the form and contact us through WhatsApp.
+        </p>
+
+        <form onsubmit="sendToWhatsApp(); return false;">
+
+            <label for="name">
+                Full Name
+            </label>
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter your full name"
+                required
+            >
+
+
+            <label for="phone">
+                Phone Number
+            </label>
+
+            <input
+                type="tel"
+                id="phone"
+                placeholder="+250 7XX XXX XXX"
+                required
+            >
+
+
+            <label for="course">
+                Choose Your Training
+            </label>
+
+            <select id="course" required>
+
+                <option value="">
+                    Select a course
+                </option>
+
+                <option>
+                    Beginner Barista
+                </option>
+
+                <option>
+                    Intermediate Barista
+                </option>
+
+                <option>
+                    Professional Barista
+                </option>
+
+                <option>
+                    Latte Art
+                </option>
+
+                <option>
+                    V60 & Brewing
+                </option>
+
+                <option>
+                    Café Business
+                </option>
+
+            </select>
+
+
+            <label for="date">
+                Preferred Training Date
+            </label>
+
+            <input
+                type="date"
+                id="date"
+                required
+            >
+
+
+            <label for="message">
+                Message
+            </label>
+
+            <textarea
+                id="message"
+                placeholder="Tell us anything we should know"
+            ></textarea>
+
+
+            <button type="submit">
+                📱 Book via WhatsApp
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact">
+
+        <h2>Contact Elevate Coffee Academy</h2>
+
+        <p>
+            Ready to start your coffee journey?
+        </p>
+
+        <p>
+            <strong>📞 Phone:</strong>
+            +250 794 870 892
+        </p>
+
+        <p>
+            <strong>📍 Location:</strong>
+            Nyamirambo, near Iriba Ryacu Supermarket, Kigali
+        </p>
+
+        <p>
+            <strong>📸 Instagram:</strong>
+            Elevate Coffee Academy
+        </p>
+
+        <a
+            href="https://wa.me/250794870892"
+            target="_blank"
+            class="button"
+        >
+            Chat With Us on WhatsApp
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 Elevate Coffee Academy.
+            All Rights Reserved.
+        </p>
+
+        <p>
+            Where Passion Meets Professionalism ☕
+        </p>
+
+    </footer>
+
+
+    <!-- WHATSAPP -->
+    <script>
+
+        function sendToWhatsApp() {
+
+            const name =
+                document.getElementById("name").value;
+
+            const phone =
+                document.getElementById("phone").value;
+
+            const course =
+                document.getElementById("course").value;
+
+            const date =
+                document.getElementById("date").value;
+
+            const message =
+                document.getElementById("message").value;
+
+
+            const whatsappMessage =
+                "Hello Elevate Coffee Academy! ☕%0A%0A" +
+
+                "I would like to book a training course.%0A%0A" +
+
+                "Name: " +
+                encodeURIComponent(name) +
+                "%0A" +
+
+                "Phone: " +
+                encodeURIComponent(phone) +
+                "%0A" +
+
+                "Course: " +
+                encodeURIComponent(course) +
+                "%0A" +
+
+                "Preferred Date: " +
+                encodeURIComponent(date) +
+                "%0A" +
+
+                "Message: " +
+                encodeURIComponent(message);
+
+
+            const whatsappNumber =
+                "250794870892";
+
+
+            window.open(
+                "https://wa.me/" +
+                whatsappNumber +
+                "?text=" +
+                whatsappMessage,
+                "_blank"
+            );
+
+        }
+
+    </script>
+
+</body>
+</html>
